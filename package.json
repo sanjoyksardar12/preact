@@ -59,7 +59,7 @@
     "build:devtools": "microbundle build --raw --cwd devtools",
     "build:hooks": "microbundle build --raw --cwd hooks",
     "build:test-utils": "microbundle build --raw --cwd test-utils",
-    "build:compat": "microbundle build --raw --cwd compat --globals 'preact/hooks=preactHooks'",
+    "build:compat": "microbundle build --raw --cwd compat --globals 'preact/hooks=preactHooks' --no-compress",
     "dev": "microbundle watch --raw --format cjs",
     "dev:hooks": "microbundle watch --raw --format cjs --cwd hooks",
     "dev:compat": "microbundle watch --raw --format cjs --cwd compat --globals 'preact/hooks=preactHooks'",
