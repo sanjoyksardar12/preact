@@ -115,4 +115,28 @@ declare namespace React {
 		only: (children: preact.ComponentChildren) => preact.ComponentChild;
 		toArray: (children: preact.ComponentChildren) => preact.VNode<{}>[];
 	};
+
+	interface Attributes {
+		key?: Key;
+	}
+
+	interface RefAttributes<T> extends Attributes {
+		ref?: Ref<T>;
+	}
+
+	interface RefForwardingComponent<T, P = {}> extends ForwardFn<T, P> {}
+
+	type MemoExoticComponent = preact.FunctionComponent<P>;
+
+	type PropsWithoutRef<P> = 'ref' extends keyof P
+		? Pick<P, Exclude<keyof P, 'ref'>>
+		: P;
+
+	type PropsWithRef<P> = 'ref' extends keyof P
+		? P extends { ref?: infer R }
+			? string extends R
+				? PropsWithoutRef<P> & { ref?: Exclude<R, string> }
+				: P
+			: P
+		: P;
 }
