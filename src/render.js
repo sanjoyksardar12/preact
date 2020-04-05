@@ -7,7 +7,7 @@ import { diff } from './vdom/diff';
  *	@public
  *
  *	@example
- *	// render a div into <body>:
+ *	// render a div into <body>: internal branch
  *	render(<div id="hello">hello!</div>, document.body);
  *
  *	@example

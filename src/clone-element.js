@@ -2,6 +2,7 @@ import { clone, extend } from './util';
 import { h } from './h';
 
 export function cloneElement(vnode, props) {
+
 	return h(
 		vnode.nodeName,
 		extend(clone(vnode.attributes), props),
